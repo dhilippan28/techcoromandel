@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TECH COROMANDEL | Digital Solutions</title>
+
+  <meta name="description"
+    content="Web, Mobile & Digital Marketing Solutions for Jewellery, Transport, Edutech, Logistics & More" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- Lottie -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: "#441450",
+            brandDark: "#150C18",
+            offWhite: "#EEECEE",
+            lightGrey: "#C9C4C5",
+            mutedGrey: "#929092",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="bg-offWhite text-brandDark font-sans scroll-smooth">
+
+<!-- NAVBAR -->
+<header class="fixed top-0 w-full z-50 bg-offWhite border-b border-lightGrey shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl sm:text-2xl font-bold text-brand">TECH COROMANDEL</h1>
+
+    <nav class="hidden md:flex items-center space-x-6 font-medium">
+      <a href="#home" class="hover:text-brand">Home</a>
+      <a href="#services" class="hover:text-brand">Services</a>
+      <a href="#products" class="hover:text-brand">Products</a>
+      <a href="#about" class="hover:text-brand">About</a>
+      <a href="#contact"
+        class="px-4 py-1 bg-brand text-offWhite rounded-full font-semibold hover:bg-brandDark transition">
+        +91 94880 25131
+      </a>
+    </nav>
+
+    <button id="menuBtn" class="md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-offWhite border-t border-lightGrey">
+    <div class="flex flex-col px-6 py-4 space-y-3">
+      <a href="#home" class="hover:text-brand">Home</a>
+      <a href="#services" class="hover:text-brand">Services</a>
+      <a href="#products" class="hover:text-brand">Products</a>
+      <a href="#about" class="hover:text-brand">About</a>
+      <a href="#contact"
+        class="mt-2 px-4 py-2 bg-brand text-offWhite text-center rounded hover:bg-brandDark">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="pt-32 md:pt-36 pb-20 bg-brand text-offWhite">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center gap-10">
+    <div class="md:w-1/2 text-center md:text-left">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+        Innovate & Elevate Your Business
+      </h2>
+      <p class="text-lightGrey text-base sm:text-lg md:text-xl mb-6">
+        Digital Solutions for Jewellery, Transport, Edutech & Logistics
+      </p>
+      <!-- <a href="#!" id="getStartedBtn" class="inline-block bg-offWhite text-brand px-6 py-3 rounded font-semibold hover:bg-lightGrey transition">
+      Get Started
+    </a> -->
+    <a href="mailto:info@techcoromandel.com"
+    class="bg-offWhite text-brand px-6 py-3 rounded font-semibold hover:bg-lightGrey">
+    Contact Us
+  </a>
+
+    </div>
+
+    <div class="md:w-1/2 flex justify-center">
+      <lottie-player
+        src="https://assets3.lottiefiles.com/packages/lf20_jcikwtux.json"
+        background="transparent"
+        speed="1"
+        class="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80"
+        loop
+        autoplay>
+      </lottie-player>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRY FORM MODAL -->
+<div id="enquiryModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-offWhite rounded-lg max-w-md w-full p-6 relative">
+    
+    <!-- Close button -->
+    <button id="closeModal" class="absolute top-3 right-3 text-mutedGrey hover:text-brand">
+      &times;
+    </button>
+
+    <h3 class="text-2xl font-bold text-brand mb-4 text-center">Get Started With TECH COROMANDEL</h3>
+
+    <form id="enquiryForm" class="space-y-4">
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border rounded" />
+      <input type="tel" name="phone" placeholder="Mobile Number" required class="w-full p-3 border rounded" />
+      <input type="email" name="email" placeholder="Email Address" class="w-full p-3 border rounded" />
+      <select name="service" required class="w-full p-3 border rounded">
+        <option value="">Select Service</option>
+        <option>Web / Mobile App</option>
+        <option>Dashboard / Analytics</option>
+        <option>Digital Marketing</option>
+        <option>Custom Software</option>
+      </select>
+      <textarea name="message" placeholder="Tell us about your requirement" class="w-full p-3 border rounded"></textarea>
+      <button type="submit" class="w-full bg-brand text-offWhite py-3 rounded font-semibold hover:bg-brandDark">
+        Submit Enquiry
+      </button>
+      <p id="formStatus" class="text-center text-sm mt-2"></p>
+    </form>
+  </div>
+</div>
+
+
+<!-- SERVICES -->
+<section id="services" class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+  <h3 class="text-3xl font-bold text-center text-brand mb-12">Our Services</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div class="p-6 bg-offWhite border rounded-lg hover:shadow-lg transition">
+      <i data-feather="monitor" class="text-brand w-8 h-8 mb-3"></i>
+      <h4 class="font-semibold text-xl mb-2 text-brand">Web & Mobile Apps</h4>
+      <p class="text-mutedGrey">Custom applications for scalable businesses.</p>
+    </div>
+
+    <div class="p-6 bg-offWhite border rounded-lg hover:shadow-lg transition">
+      <i data-feather="bar-chart-2" class="text-brand w-8 h-8 mb-3"></i>
+      <h4 class="font-semibold text-xl mb-2 text-brand">Dashboards</h4>
+      <p class="text-mutedGrey">Data-driven insights & analytics.</p>
+    </div>
+
+    <div class="p-6 bg-offWhite border rounded-lg hover:shadow-lg transition">
+      <i data-feather="trending-up" class="text-brand w-8 h-8 mb-3"></i>
+      <h4 class="font-semibold text-xl mb-2 text-brand">Digital Marketing</h4>
+      <p class="text-mutedGrey">SEO, Meta Ads & growth strategies.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+  <h3 class="text-3xl font-bold text-center text-brand mb-12">Our Products</h3>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+    <div class="p-6 border rounded-lg text-center hover:shadow-lg">
+      <iframe src="https://lottie.host/embed/3a0caeda-35d9-4a25-9778-c5999a134dd4/32adgUHGjO.lottie"
+        class="w-36 h-36 mx-auto border-none"></iframe>
+      <h4 class="font-semibold text-xl mt-4 text-brand">Finance Insights Tool</h4>
+      <p class="text-mutedGrey my-3">Clear financial analytics & reporting.</p>
+      <a href="#contact" class="bg-brand text-offWhite px-4 py-2 rounded">Learn More</a>
+    </div>
+
+    <div class="p-6 border rounded-lg text-center hover:shadow-lg">
+      <iframe src="https://lottie.host/embed/2580c42c-7ddd-4c5f-a6ca-2f16da14bba4/aPNIHsp9c0.lottie"
+        class="w-36 h-36 mx-auto border-none"></iframe>
+      <h4 class="font-semibold text-xl mt-4 text-brand">Logistics Dashboard</h4>
+      <p class="text-mutedGrey my-3">Fleet & transport monitoring.</p>
+      <a href="#contact" class="bg-brand text-offWhite px-4 py-2 rounded">Learn More</a>
+    </div>
+
+    <div class="p-6 border rounded-lg text-center hover:shadow-lg">
+      <lottie-player
+        src="https://assets2.lottiefiles.com/packages/lf20_tno6cg2w.json"
+        background="transparent"
+        speed="1"
+        class="w-32 h-32 mx-auto"
+        loop autoplay>
+      </lottie-player>
+      <h4 class="font-semibold text-xl mt-4 text-brand">Edutech App</h4>
+      <p class="text-mutedGrey my-3">Tutor & student management.</p>
+      <a href="#contact" class="bg-brand text-offWhite px-4 py-2 rounded">Learn More</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT
+<section id="about" class="max-w-5xl mx-auto px-4 sm:px-6 py-16 text-center">
+  <h3 class="text-3xl font-bold text-brand mb-4">About Us</h3>
+  <p class="text-mutedGrey text-lg">
+    TECH COROMANDEL builds scalable digital products and marketing solutions
+    helping businesses grow faster with technology.
+  </p>
+</section> -->
+
+<section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+  <div class="text-center mb-10">
+    <h3 class="text-3xl font-bold text-brand mb-3">About TECH COROMANDEL</h3>
+    <p class="text-mutedGrey text-lg max-w-3xl mx-auto">
+      Building practical digital solutions that help businesses grow faster, smarter, and stronger.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-10 items-center">
+    
+    <!-- Left Content -->
+    <div>
+      <p class="text-mutedGrey text-base leading-relaxed mb-4">
+        <strong class="text-brand">TECH COROMANDEL</strong> is a technology-driven digital solutions company
+        focused on delivering scalable web applications, mobile apps, analytics dashboards, and
+        performance marketing solutions.
+      </p>
+
+      <p class="text-mutedGrey text-base leading-relaxed mb-4">
+        We specialize in working with <strong>Jewellery businesses, Transport & Logistics companies,
+        Edutech platforms, and Service-based startups</strong> to help them digitize operations,
+        improve visibility, and increase revenue.
+      </p>
+
+      <p class="text-mutedGrey text-base leading-relaxed">
+        Our approach is simple — understand your business deeply, build technology that actually
+        solves problems, and continuously optimize for growth.
+      </p>
+    </div>
+
+    <!-- Right Highlights -->
+    <div class="bg-offWhite border border-lightGrey rounded-lg p-6">
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="text-brand mt-1">✔</span>
+          <p class="text-mutedGrey">
+            Industry-specific solutions instead of generic software
+          </p>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand mt-1">✔</span>
+          <p class="text-mutedGrey">
+            Scalable, secure, and future-ready architecture
+          </p>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand mt-1">✔</span>
+          <p class="text-mutedGrey">
+            Data-driven dashboards for real-time insights
+          </p>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand mt-1">✔</span>
+          <p class="text-mutedGrey">
+            Strong focus on ROI, performance & growth
+          </p>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="bg-brand text-offWhite py-16 text-center">
+  <h3 class="text-3xl font-bold mb-4">Ready to Grow?</h3>
+  <p class="text-lightGrey mb-6">Let’s build something amazing together.</p>
+  <a href="mailto:info@techcoromandel.com"
+    class="bg-offWhite text-brand px-6 py-3 rounded font-semibold hover:bg-lightGrey">
+    Contact Us
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-brandDark text-offWhite py-6 text-center text-sm px-4">
+  <p>© 2025 TECH COROMANDEL</p>
+  <p class="mt-2 flex flex-col sm:flex-row justify-center gap-2">
+    <span>info@techcoromandel.com</span>
+    <span class="hidden sm:inline">|</span>
+    <span>+91 94880 25131</span>
+  </p>
+</footer>
+
+<script>
+  const getStartedBtn = document.getElementById("getStartedBtn");
+  const enquiryModal = document.getElementById("enquiryModal");
+  const closeModal = document.getElementById("closeModal");
+
+  // Open modal
+  getStartedBtn.addEventListener("click", () => {
+    enquiryModal.classList.remove("hidden");
+    enquiryModal.classList.add("flex"); // Tailwind flex to center content
+  });
+
+  // Close modal
+  closeModal.addEventListener("click", () => {
+    enquiryModal.classList.add("hidden");
+    enquiryModal.classList.remove("flex");
+  });
+
+  // Close modal when clicking outside the content
+  enquiryModal.addEventListener("click", (e) => {
+    if (e.target === enquiryModal) {
+      enquiryModal.classList.add("hidden");
+      enquiryModal.classList.remove("flex");
+    }
+  });
+</script>
+
+
+<script>
+  feather.replace();
+
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  document.querySelectorAll("#mobileMenu a").forEach(link => {
+    link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+  });
+</script>
+
+</body>
+</html>
